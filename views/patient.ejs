@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <title>PHMS: Patient</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="PHMS: Patient" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- //Custom Theme files -->
+	 <!-- online-fonts -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet"><!-- //online-fonts -->
+</head>
+<body>
+<script src="../../../../../../../m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
+  	}
+})();
+</script>
+<script>
+(function(){
+if(typeof _bsa !== 'undefined' && _bsa) {
+	// format, zoneKey, segment:value, options
+	_bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
+}
+})();
+</script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
+  	}
+})();
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-98H8KRKT85'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-98H8KRKT85');
+</script>
+
+<meta name="robots" content="noindex">
+<body><link rel="stylesheet" href="../../../../../../assests/css/font-awesome.min.css">
+<!-- New toolbar-->
+<style>
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+
+#w3lDemoBar.w3l-demo-bar {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  padding: 40px 5px;
+  padding-top:70px;
+  margin-bottom: 70px;
+  background: #0D1326;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+#w3lDemoBar.w3l-demo-bar a {
+  display: block;
+  color: #e6ebff;
+  text-decoration: none;
+  line-height: 24px;
+  opacity: .6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#w3lDemoBar.w3l-demo-bar span.w3l-icon {
+  display: block;
+}
+
+#w3lDemoBar.w3l-demo-bar a:hover {
+  opacity: 1;
+}
+
+#w3lDemoBar.w3l-demo-bar .w3l-icon svg {
+  color: #e6ebff;
+}
+#w3lDemoBar.w3l-demo-bar .responsive-icons {
+  margin-top: 30px;
+  border-top: 1px solid #41414d;
+  padding-top: 40px;
+}
+#w3lDemoBar.w3l-demo-bar .demo-btns {
+  border-top: 1px solid #41414d;
+  padding-top: 30px;
+}
+#w3lDemoBar.w3l-demo-bar .responsive-icons a span.fa {
+  font-size: 26px;
+}
+#w3lDemoBar.w3l-demo-bar .no-margin-bottom{
+  margin-bottom:0;
+}
+.toggle-right-sidebar span {
+  background: #0D1326;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #e6ebff;
+  border-radius: 50px;
+  font-size: 26px;
+  cursor: pointer;
+  opacity: .5;
+}
+.pull-right {
+  float: right;
+  position: fixed;
+  right: 0px;
+  top: 70px;
+  width: 90px;
+  z-index: 99999;
+  text-align: center;
+}
+/* ============================================================
+RIGHT SIDEBAR SECTION
+============================================================ */
+
+#right-sidebar {
+  width: 90px;
+  position: fixed;
+  height: 100%;
+  z-index: 1000;
+  right: 0px;
+  top: 0;
+  margin-top: 60px;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  overflow-y: auto;
+}
+
+
+/* ============================================================
+RIGHT SIDEBAR TOGGLE SECTION
+============================================================ */
+
+.hide-right-bar-notifications {
+  margin-right: -300px !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.view-profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.view-profile h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.view-profile h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.view-profile .profile-details p {
+  margin-bottom: 10px;
+}
+
+.view-profile .edit-profile-form {
+  display: none;
+}
+
+.view-profile .edit-profile-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.view-profile .edit-profile-form input[type="text"],
+.view-profile .edit-profile-form input[type="email"],
+.view-profile .edit-profile-form input[type="tel"],
+.view-profile .edit-profile-form input[type="date"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.view-profile .edit-profile-form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-profile .edit-profile-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.view-profile .edit-profile-form .cancel-btn {
+  margin-left: 10px;
+}
+
+
+@media (max-width: 992px) {
+  #w3lDemoBar.w3l-demo-bar a.desktop-mode{
+      display: none;
+
+  }
+}
+@media (max-width: 767px) {
+  #w3lDemoBar.w3l-demo-bar a.tablet-mode{
+      display: none;
+
+  }
+}
+@media (max-width: 568px) {
+  #w3lDemoBar.w3l-demo-bar a.mobile-mode{
+      display: none;
+  }
+  #w3lDemoBar.w3l-demo-bar .responsive-icons {
+      margin-top: 0px;
+      border-top: none;
+      padding-top: 0px;
+  }
+  #right-sidebar,.pull-right {
+      width: 90px;
+  }
+  #w3lDemoBar.w3l-demo-bar .no-margin-bottom-mobile{
+      margin-bottom: 0;
+  }
+}
+</style>
+
+    </div>
+    <div class="right-sidebar-panel-content animated fadeInRight" tabindex="5003"
+        style="overflow: hidden; outline: none;">
+    </div>
+</div>
+</div>
+</div>
+
+        <!-- header -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary">
+                <h1>
+                    <a class="navbar-brand text-white" href="/">
+                       PHMS <!--Using Cloud-->
+                    </a>
+                </h1>
+                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-lg-auto text-center">
+                    
+                        <li>
+                            <button type="button" class="btn  ml-lg-2 w3ls-btn" data-toggle="modal" aria-pressed="false" data-target="#exampleModal" onclick="logout()">
+                                Logout
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+ <!-- main image slider container -->
+        <!-- <div class="inner-banner">
+         </div>  -->
+    <!-- end of main image slider container -->
+	<nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <!-- <li class="breadcrumb-item active" aria-current="page">Services</li> -->
+        </ol>
+    </nav>
+	 <!-- services -->
+	 <!---728x90--->
+
+   <section class="wthree-row w3-contact py-lg-5">
+    <div class="container1 py-4">
+      <div class="text-center wthree-title pb-sm-5 pb-3">
+        <h3 class="w3l-sub">Patient's Login</h3>
+        <h4 class="sub-title py-3">Welcome, <%= patientName %></h4> <!-- Updated line -->
+      </div>
+
+        <!-- Main Content -->
+<div class="container my-4">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Profile</h5>
+                <p class="card-text">View and edit your profile information.</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#profileModal">View Profile</a>
+            </div>
+        </div>
+        
+        <!-- Profile Modal -->
+         <!-- Profile Modal -->
+         <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="profileModalLabel">Edit Profile Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="updateForm">
+                  <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <div class="d-flex">
+                      <input type="text" class="form-control" id="name" placeholder="Enter your name" value="<%= user.name %>" readonly>
+                      <button type="button" class="btn btn-primary ml-2 edit-btn" data-field="name" id="name-edit-btn">Edit</button>
+                      <button type="button" class="btn btn-primary ml-2 update-btn" data-field="name" id="name-update-btn" style="display: none;">Update</button>
+                      <input type="text" class="form-control" id="name-input" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPhone">Email</label>
+                    <div class="d-flex">
+                      <input type="text" class="form-control" id="email" placeholder="Enter your email" value="<%= user.email %>" readonly>
+                      <button type="button" class="btn btn-primary ml-2 edit-btn" data-field="email" id="email-edit-btn">Edit</button>
+                      <button type="button" class="btn btn-primary ml-2 update-btn" data-field="email" id="email-update-btn" style="display: none;">Update</button>
+                      <input type="text" class="form-control" id="email-input" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPhone">Mobile</label>
+                    <div class="d-flex">
+                      <input type="text" class="form-control" id="mobile" placeholder="Enter your mobile number" value="<%= user.mobile %>" readonly>
+                      <button type="button" class="btn btn-primary ml-2 edit-btn" data-field="mobile" id="mobile-edit-btn">Edit</button>
+                      <button type="button" class="btn btn-primary ml-2 update-btn" data-field="mobile" id="mobile-update-btn" style="display: none;">Update</button>
+                      <input type="text" class="form-control" id="mobile-input" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <div class="d-flex">
+                      <input type="text" class="form-control" id="address" placeholder="Enter your address" value="<%= user.address %>" readonly>
+                      <button type="button" class="btn btn-primary ml-2 edit-btn" data-field="address" id="address-edit-btn">Edit</button>
+                      <button type="button" class="btn btn-primary ml-2 update-btn" data-field="address" id="address-update-btn" style="display: none;">Update</button>
+                      <input type="text" class="form-control" id="address-input" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Age</label>
+                    <div class="d-flex">
+                      <input type="number" class="form-control" id="age" placeholder="Enter your age" value="<%= user.age %>" readonly>
+                      <button type="button" class="btn btn-primary ml-2 edit-btn" data-field="age" id="age-edit-btn">Edit</button>
+                      <button type="button" class="btn btn-primary ml-2 update-btn" data-field="age" id="age-update-btn" style="display: none;">Update</button>
+                      <input type="text" class="form-control" id="age-input" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Password</label>
+                    <div class="d-flex">
+                      <input type="password" class="form-control" id="password" placeholder="Enter your new password" value="<%= user.password %>" readonly>
+                      <button type="button" class="btn btn-primary ml-2 edit-btn" data-field="password" id="password-edit-btn">Edit</button>
+                      <button type="button" class="btn btn-primary ml-2 update-btn" data-field="password" id="password-update-btn" style="display: none;">Update</button>
+                      <input type="text" class="form-control" id="password-input" style="display: none;">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card mt-4"></div>
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Health History</h5>
+              <p class="card-text">View your health history reports.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#healthHistoryModal">View History</button>
+            </div>
+          </div>
+          
+          <!-- Health History Modal -->
+          <div class="modal fade" id="healthHistoryModal" tabindex="-1" role="dialog" aria-labelledby="healthHistoryModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="healthHistoryModalLabel">Select a Report to View</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="reportSelect">Select a Report:</label>
+                      <select class="form-control" id="reportSelect">
+                        <option value="">--Select--</option>
+                        <option>Blood Test</option>
+                        <option>Urine Test</option>
+                        <option>X-Ray</option>
+                        <option>CT Scan</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="reportView">Report View:</label>
+                      <textarea class="form-control" id="reportView" rows="10" readonly></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="viewReportButton">View Report</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        <div class="card mt-4">
+          <!-- Prescription Modal -->
+          <div class="modal fade" id="prescriptionModal" tabindex="-1" role="dialog" aria-labelledby="prescriptionModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="prescriptionModalLabel">View Prescriptions</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Medicine Name</th>
+                        <th scope="col">Dosage</th>
+                        <th scope="col">Doctor Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% for (var i = 0; i < prescriptions.length; i++) { %>
+                        <tr>
+                          <th scope="row"><%= i + 1 %></th>
+                          <td><%= prescriptions[i].prescription %></td>
+                          <td><%= prescriptions[i].dosage %></td>
+                          <td><%= prescriptions[i].doctorName %></td>
+                        </tr>
+                      <% } %>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+  
+  <!-- Prescription Button -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Prescriptions</h5>
+      <p class="card-text">View your prescribed medicines.</p>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#prescriptionModal">View Prescription</button>
+    </div>
+  </div>
+  
+        </div>
+        <div class="card mt-4">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Upload Reports</h5>
+                  <p class="card-text">Upload your latest health reports.</p>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#uploadReportsModal">Upload Reports</button>
+                </div>
+              </div>
+              
+              <!-- Upload Reports Modal -->
+              <!-- Add the necessary HTML code -->
+              <div class="modal fade" id="uploadReportsModal" tabindex="-1" role="dialog" aria-labelledby="uploadReportsModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="uploadReportsModalLabel">Upload Reports</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="uploadForm" enctype="multipart/form-data">
+                        <div class="form-group">
+                          <label for="reportSelect">Select Report Type</label>
+                          <select class="form-control" id="reportSelect">
+                            <option>Select Report Type</option>
+                            <option>Blood Test</option>
+                            <option>Urine Test</option>
+                            <option>X-Ray</option>
+                            <option>CT Scan</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="reportFile">Choose File</label>
+                          <input type="file" class="form-control-file" id="reportFile" name="reportFile">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="uploadButton">Upload</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+        </div>
+      </div>
+     <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Schedule Appointment</h5>
+            <form id="appointment-form">
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date">
+              </div> 
+              <div class="form-group">
+                <label for="time">Time</label>
+                <input type="time" class="form-control" id="time">
+              </div>
+              <div class="form-group">
+                <label for="doctor">Doctor</label>
+                <select class="form-control" id="doctor" required>
+                  <option value="">Select Doctor</option>
+                  <!-- Iterate over the doctors array and generate options for doctors -->
+                  <% for(var i = 0; i < doctors.length; i++) { %>
+                    <option value="<%= doctors[i].name %>"><%= doctors[i].name %></option>
+                  <% } %>
+                </select>
+                
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</section>
+    <!-- //services -->
+	<!---728x90--->
+	
+<!---728x90--->
+<!--Footer-->
+<footer class="py-sm-5">
+  <div class="container">
+      <div class="row py-5">
+          <!-- footer grid1 -->
+          <div class="col-lg-3 col-sm-6 fv5-contact">
+              <h2 class="mb-4">Contact Us</h2>
+              <div class="fv3-contact mt-3">
+              
+                  <span class="fas fa-home mr-2"></span>
+                  <p>ZCOER, Narhe.</p>
+              </div>
+              <div class="fv3-contact mt-3">
+                  <span class="fas fa-phone-volume mr-2"></span>
+                  <p>+91 123456789</p>
+              </div>
+              <div class="fv3-contact mt-3">
+                  <span class="fas fa-envelope-open mr-2"></span>
+                  <a href="mailto:example@email.com" class="text-secondary">group24@example.com</a>
+              </div>
+          </div>
+          
+          <div class="col-lg-3  col-sm-6 footv3-left text-lg-center my-lg-0 mt-sm-5 mt-5">
+              <h3 class="mb-4">Navigation</h3>
+              <ul class="list-agileits">
+                  <li>
+                      <a href="home.hbs">
+                          Home
+                      </a>
+                  </li>
+                  <!-- <li class="mb-3">
+                      <a href="services.html">
+                          Services
+                      </a>
+                  </li> -->
+                  <li>
+                      <a href="contact.html">
+                          Contact Us
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <!-- //footer grid3 -->
+          <!-- footer grid4  -->
+          <div class="col-lg-3  col-sm-6 footv3-left my-lg-0 mt-5">
+              <h3 class="mb-4">Get more Details</h3>
+              <form action="#" method="post">
+                  <div class="form-group">
+                      <input type="email" class="form-control  bg-dark border-0" id="email" placeholder="Enter email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                      <input type="Submit" class="form-control bg-secondary text-white border-0" id="sub" value="submit" name="sub">
+                  </div>
+              </form>
+          </div>
+          <!-- //footer grid4 -->
+      </div>
+      <div class="cpy-right text-center  pt-3">
+          
+          <div class="copyrightbottom">
+              <p class="text-secondary">© BE IT Group 24 2023. All rights reserved.
+              </p>
+          </div>
+          <div class="copyrighttop">
+              <ul>
+                  <li>
+                      <h4>Follow us on:</h4>
+                  </li>
+                  <li>
+                      <a class="facebook" href="#">
+                          <i class="fab fa-facebook-f"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="facebook" href="#">
+                          <i class="fab fa-twitter"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="facebook" href="#">
+                          <i class="fab fa-google-plus-g"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a class="facebook" href="#">
+                          <i class="fab fa-pinterest-p"></i>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="clearfix"></div>
+      </div>
+  </div>
+  <!-- //footer container -->
+</footer>
+
+	
+
+    <!-- //footer -->
+    <!-- js -->
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!-- //js -->
+    <!-- script for password match -->
+   
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+
+    <!--Profile Update Details-->
+    <script>
+      // Add event listeners to edit buttons
+      const editButtons = document.querySelectorAll('.edit-btn');
+      editButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          const field = event.target.getAttribute('data-field');
+          const inputField = document.getElementById(`${field}-input`);
+          const updateButton = document.getElementById(`${field}-update-btn`);
+      
+          inputField.value = document.getElementById(field).value;
+          inputField.style.display = 'block';
+          updateButton.style.display = 'block';
+          event.target.style.display = 'none';
+          document.getElementById(field).readOnly = true;
+        });
+      });
+      
+      // Add event listeners to update buttons
+      const updateButtons = document.querySelectorAll('.update-btn');
+      updateButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          const field = event.target.getAttribute('data-field');
+          const inputField = document.getElementById(`${field}-input`);
+          const editButton = document.getElementById(`${field}-edit-btn`);
+      
+          document.getElementById(field).value = inputField.value;
+          inputField.style.display = 'none';
+          event.target.style.display = 'none';
+          editButton.style.display = 'block';
+          document.getElementById(field).readOnly = false;
+        });
+      });
+      
+      // Get the form element
+      const form = document.getElementById('updateForm');
+      
+      // Add submit event listener to the form
+      form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+      
+        // Get the updated field values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const mobile = document.getElementById('mobile').value;
+        const address = document.getElementById('address').value;
+        const age = document.getElementById('age-input').value;
+        const password = document.getElementById('password').value;
+      
+        // Retrieve the user ID from the session
+        const userId = '<%= user.id %>';
+      
+        // Create an object with the updated data
+        const updatedData = {
+          name,
+          email,
+          mobile,
+          address,
+          age,
+          password
+        };
+      
+        // Make a PUT request to update the user data
+        fetch(`/api/registerationForm/${userId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedData)
+        })
+          .then(response => response.json())
+          .then(updatedUser => {
+            // Handle the response or perform any additional actions after the update
+            console.log('User updated:', updatedUser);
+            // You can also display a success message or close the modal here
+            // e.g., $('#profileModal').modal('hide');
+          })
+          .catch(error => {
+            // Handle the error
+            console.error('Error updating user:', error);
+            // You can display an error message or handle the error accordingly
+          });
+      });
+    </script>
+    
+<!--Code for Report Upload-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the form element and upload button
+    const form = document.getElementById('uploadForm');
+    const uploadButton = document.getElementById('uploadButton');
+
+    // Add event listener to the upload button
+    uploadButton.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      // Get the selected report type and file input element
+      const reportType = document.getElementById('reportSelect').value;
+      const reportFile = document.getElementById('reportFile');
+
+      // Create a new FormData object
+      const formData = new FormData();
+      formData.append('reportType', reportType);
+      formData.append('reportFile', reportFile.files[0]);
+
+      // Retrieve the user ID from the session
+      const userId = '<%= user.id %>';
+
+      // Make a POST request to upload the file and save the image data
+      fetch(`/api/registerationForm/${userId}/upload`, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(result => {
+        // Handle the response or perform any additional actions after the upload
+        console.log('Upload result:', result);
+        // You can also display a success message or close the modal here
+        // e.g., $('#uploadReportsModal').modal('hide');
+      })
+      .catch(error => {
+        // Handle the error
+        console.error('Error uploading file:', error);
+        // You can display an error message or handle the error accordingly
+      });
+    });
+  });
+</script>
+
+<!--View Health History-->
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+  // Get the report select element and report view textarea
+  const reportSelect = document.getElementById('reportSelect');
+  const reportView = document.getElementById('reportView');
+
+  // Add event listener to the report select element
+  reportSelect.addEventListener('change', function() {
+    // Get the selected report type
+    const selectedReportType = reportSelect.value;
+
+    // Retrieve the uploaded image for the selected report type
+    fetch(`/api/registerationForm/${userId}/upload${selectedReportType}`)
+      .then(response => response.blob()) // Retrieve the image as a Blob object
+      .then(imageBlob => {
+        // Create a URL for the Blob object
+        const imageUrl = URL.createObjectURL(imageBlob);
+        reportView.innerHTML = `<img src="${imageUrl}" alt="Report Image">`;
+      })
+      .catch(error => {
+        console.error('Error retrieving image:', error);
+        reportView.innerHTML = 'Error retrieving image';
+      });
+  });
+});
+
+</script>
+
+<!--Schedule appointment-->
+<script>
+  document.getElementById("appointment-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get the selected values from the form
+  var selectedDate = document.getElementById("date").value;
+  var selectedDoctor = document.getElementById("doctor").value;
+
+  // Create an object to hold the updated appointment details
+  var updatedAppointment = {
+    appdate: selectedDate,
+    docname: selectedDoctor
+  };
+
+  // Retrieve the user ID from the session
+  var userId = '<%= user.id %>'; // Replace with the correct session variable that holds the user ID
+
+  // Make a POST request to update the user's appointment
+  fetch(`/api/registerationForm/${userId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedAppointment)
+  })
+  .then(function(response) {
+    // Handle the response from the server
+    if (response.ok) {
+      // Appointment updated successfully
+      alert("Appointment updated successfully");
+    } else {
+      // Error occurred while updating the appointment
+      alert("Error updating the appointment");
+    }
+  })
+  .catch(function(error) {
+    // Error occurred while making the request
+    console.log("Error:", error);
+  });
+});
+
+
+</script>
+
+
+    <script>
+        $(document).ready(function () {
+          
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script>
+      function logout() {
+          // Redirect to home
+          window.location.href = "/";
+      }
+      </script>
+    <script src="js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
